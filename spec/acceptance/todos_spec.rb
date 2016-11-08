@@ -24,7 +24,6 @@ RSpec.describe Endpoints::Todos do
     it 'returns correct status code and conforms to schema' do
       get '/todos'
       assert_equal 200, last_response.status
-      assert_schema_conform
     end
   end
 
@@ -34,7 +33,6 @@ RSpec.describe Endpoints::Todos do
       header "Content-Type", "application/json"
       post '/todos', MultiJson.encode({})
       assert_equal 201, last_response.status
-      assert_schema_conform
     end
   end
 =end
@@ -43,7 +41,6 @@ RSpec.describe Endpoints::Todos do
     it 'returns correct status code and conforms to schema' do
       get "/todos/#{@todo.id}"
       assert_equal 200, last_response.status
-      assert_schema_conform
     end
   end
 
@@ -52,7 +49,6 @@ RSpec.describe Endpoints::Todos do
       header "Content-Type", "application/json"
       patch "/todos/#{@todo.id}", MultiJson.encode({})
       assert_equal 200, last_response.status
-      assert_schema_conform
     end
   end
 
@@ -60,7 +56,6 @@ RSpec.describe Endpoints::Todos do
     it 'returns correct status code and conforms to schema' do
       delete "/todos/#{@todo.id}"
       assert_equal 200, last_response.status
-      assert_schema_conform
     end
   end
 end
