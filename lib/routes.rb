@@ -18,6 +18,7 @@ Routes = Rack::Builder.new do
     # mount all endpoints here
     mount Endpoints::Health
     mount Endpoints::Schema
+    mount Endpoints::Todos
   end
 
   # root app; but will also handle some defaults like 404
