@@ -13,7 +13,7 @@ RSpec.describe Endpoints::Todos do
   end
 
   before do
-    @todo = Todo.create
+    @todo = Todo.create(body: 'test todo text')
 
     # temporarily touch #updated_at until we can fix prmd
     @todo.updated_at
